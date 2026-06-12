@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Ejecución de Pruebas — pruebas</title>
+<style>
+  :root { --ok:#1a7f37; --okbg:#e6f4ea; --bg:#f6f8fa; --border:#d0d7de; --txt:#1f2328; --muted:#656d76; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--txt); margin:0; background:var(--bg); }
+  .wrap { max-width:960px; margin:0 auto; padding:32px 20px 60px; }
+  h1 { font-size:24px; margin:0 0 4px; }
+  .sub { color:var(--muted); font-size:14px; margin-bottom:24px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:28px; }
+  .card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:16px; text-align:center; }
+  .card .n { font-size:30px; font-weight:700; }
+  .card .l { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+  .pass { color:var(--ok); }
+  .banner { background:var(--okbg); border:1px solid var(--ok); color:var(--ok); font-weight:600;
+            padding:12px 16px; border-radius:10px; margin-bottom:28px; display:flex; align-items:center; gap:8px; }
+  table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border);
+          border-radius:10px; overflow:hidden; margin-bottom:28px; }
+  th,td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--border); font-size:14px; }
+  th { background:#f0f3f6; font-weight:600; }
+  tr:last-child td { border-bottom:none; }
+  td.num,th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  .pill { display:inline-block; background:var(--okbg); color:var(--ok); font-size:11px; font-weight:600;
+          padding:2px 8px; border-radius:20px; }
+  h2 { font-size:17px; margin:28px 0 10px; }
+  .cls { color:var(--muted); font-weight:400; font-size:12px; }
+  code { background:#eff1f3; padding:1px 5px; border-radius:4px; font-size:13px; }
+  footer { color:var(--muted); font-size:12px; margin-top:30px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Informe de Ejecución de Pruebas</h1>
+  <div class="sub">Proyecto <strong>udla.pruebas:pruebas</strong> · Spring Boot 3.5.15 · Java 21 · Última ejecución: 2026-06-11</div>
+
+  <div class="banner">✔ BUILD SUCCESS — Todas las pruebas pasaron correctamente</div>
+
+  <div class="cards">
+    <div class="card"><div class="n">9</div><div class="l">Total tests</div></div>
+    <div class="card"><div class="n pass">9</div><div class="l">Exitosos</div></div>
+    <div class="card"><div class="n">0</div><div class="l">Fallos</div></div>
+    <div class="card"><div class="n">0</div><div class="l">Errores</div></div>
+    <div class="card"><div class="n">0</div><div class="l">Saltados</div></div>
+    <div class="card"><div class="n pass">100%</div><div class="l">Éxito</div></div>
+  </div>
+
+  <h2>Resumen por clase</h2>
+  <table>
+    <thead>
+      <tr><th>Clase</th><th>Tipo</th><th class="num">Tests</th><th class="num">Fallos</th><th class="num">Errores</th><th class="num">Tiempo (s)</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CommissionServiceTest</td><td>Unitaria</td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num">1.721</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td>PruebasApplicationTests</td><td>Contexto</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">2.524</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td>PaymentContractTest</td><td>Contrato (Pact)</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">3.081</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td>TransactionRepositoryTest</td><td>Integración (Testcontainers)</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">14.881</td><td><span class="pill">PASÓ</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Detalle por caso de prueba</h2>
+
+  <table>
+    <thead><tr><th>Caso de prueba</th><th class="num">Tiempo (s)</th><th>Estado</th></tr></thead>
+    <tbody>
+      <tr><td colspan="3"><strong>CommissionServiceTest</strong> <span class="cls">— udla.pruebas.pruebas</span></td></tr>
+      <tr><td><code>testCalculateCommission_Tier1_BoundaryExact</code></td><td class="num">0.012</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td><code>testCalculateCommission_Tier2_BoundaryLower</code></td><td class="num">0.011</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td><code>testCalculateCommission_Tier2_BoundaryUpper</code></td><td class="num">0.006</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td><code>testCalculateCommission_Tier3_BoundaryLower</code></td><td class="num">1.635</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td><code>testCalculateCommission_RoundingHalfUp_TriggersCorrectly</code></td><td class="num">0.004</td><td><span class="pill">PASÓ</span></td></tr>
+      <tr><td><code>testCalculateCommission_ZeroOrNegativeSales_ReturnsZero</code></td><td class="num">0.002</td><td><span class="pill">PASÓ</span></td></tr>
+
+      <tr><td colspan="3"><strong>PruebasApplicationTests</strong> <span class="cls">— udla.pruebas.pruebas</span></td></tr>
+      <tr><td><code>contextLoads</code></td><td class="num">0.011</td><td><span class="pill">PASÓ</span></td></tr>
+
+      <tr><td colspan="3"><strong>PaymentContractTest</strong> <span class="cls">— udla.pruebas.pruebas.integration</span></td></tr>
+      <tr><td><code>shouldAuthorizePaymentAccordingToContract</code></td><td class="num">2.835</td><td><span class="pill">PASÓ</span></td></tr>
+
+      <tr><td colspan="3"><strong>TransactionRepositoryTest</strong> <span class="cls">— udla.pruebas.pruebas.integration</span></td></tr>
+      <tr><td><code>shouldFindTransactionsByDateRange</code></td><td class="num">0.456</td><td><span class="pill">PASÓ</span></td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    Generado a partir de los reportes de Maven Surefire en <code>target/surefire-reports/</code>.<br>
+    Para regenerar la ejecución: <code>mvn test</code> (o <code>./mvnw test</code> con conexión a internet).
+  </footer>
+</div>
+</body>
+</html>
